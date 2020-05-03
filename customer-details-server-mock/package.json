@@ -1,0 +1,25 @@
+{
+  "name": "customer-details-server-mock",
+  "version": "1.0.0",
+  "description": "Just a customer details mock to test data-combiner",
+  "main": "server.js",
+  "scripts": {
+    "debug": "nodemon --inspect=9229 server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Bruno Saboia de Albuquerque",
+  "license": "MIT",
+  "dependencies": {
+    "@apollo/federation": "^0.14.1",
+    "apollo-server": "^2.12.0",
+    "graphql": "^15.0.0",
+    "nodemon": "^2.0.3",
+    "typescript": "^3.8.3"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^2.29.0",
+    "@typescript-eslint/parser": "^2.29.0",
+    "eslint": "^6.8.0",
+    "eslint-config-google": "^0.14.0"
+  }
+}

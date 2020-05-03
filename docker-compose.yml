@@ -1,0 +1,10 @@
+version: '3'
+services:
+  proxy:
+    build: ./reverse-proxy
+    ports:
+      - "8080:8080"
+  balance:
+    build: ./balance-server-mock
+  customer-details:
+    build: ./customer-details-server-mock

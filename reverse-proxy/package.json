@@ -1,0 +1,20 @@
+{
+  "name": "reverse-proxy",
+  "version": "1.0.0",
+  "description": "Just the reverse proxy for data-combiner",
+  "main": "proxy.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Bruno Saboia de Albuquerque",
+  "license": "MIT",
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "http-proxy-middleware": "^1.0.3"
+  },
+  "devDependencies": {
+    "eslint": "^6.8.0",
+    "eslint-config-google": "^0.14.0"
+  }
+}
