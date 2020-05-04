@@ -40,4 +40,4 @@ The delayed call is invoked by using different strategies. The details of each s
 If you have any questions or comments, please contact:
 
 * Bruno Saboia de Albuquerque
-* brunosaboia@mail.com
+* brunosaboia@gmail.com
