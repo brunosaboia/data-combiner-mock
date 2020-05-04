@@ -40,4 +40,3 @@ Please see the table below:
 |-------------------|-----------|---------------------------------------------------------------|---------------|
 | X-Min-Delay       | Integer   | [Millisseconds](https://en.wikipedia.org/wiki/Millisecond)    | 3000          |
 | X-Max-Delay       | Integer   | [Millisseconds](https://en.wikipedia.org/wiki/Millisecond)    | 10000         |
-
