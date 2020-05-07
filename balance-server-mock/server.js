@@ -1,4 +1,6 @@
 const express = require('express');
+const {DataLoader} = require('../common-lib/data-loader');
+
 
 const app = express();
 app.use(express.json());
@@ -11,25 +13,11 @@ const generateRandomInteger = (min, max) => {
   return Math.floor(Math.random() * (max - min) + min);
 };
 
-const balances = [
-  {
-    account: 'DK2750511545499816',
-    balance: 100.43,
-    currency: 'DKK',
-  },
-  {
-    account: 'DK2750511545499816',
-    balance: 4000.44,
-    currency: 'DKK',
-  },
-  {
-    account: 'DK0550514428749649',
-    balance: 100000.00,
-    currency: 'DKK',
-  },
-];
+const balances = new DataLoader('./balances.json');
 
-app.get('/api/balances-delay', (req, res) => {
+app.get('/api/balances-delay', async (req, res) => {
+  await balances.loadMostUpToDateData();
+
   const min = req.header('X-Min-Delay') || 3000;
   const max = req.header('X-Max-Delay') || 10000;
 
@@ -37,14 +25,16 @@ app.get('/api/balances-delay', (req, res) => {
   console.log(`Sleeping for ${sleepTime} before returning balance`);
 
   sleep(sleepTime).then(() => {
-    res.send(balances);
+    res.send(balances.data);
   });
 });
 
-app.get('/api/balances', (_req, res) => {
+app.get('/api/balances', async (_req, res) => {
+  await balances.loadMostUpToDateData();
+
   console.log('Sending balances without delay');
 
-  res.send(balances);
+  res.send(balances.data);
 });
 
 const port = process.env.BALANCE_SERVER_PORT || 7801;

@@ -1,0 +1,22 @@
+{
+  "name": "common-lib",
+  "version": "1.0.0",
+  "description": "Just a library with common methods for Data Combiner mock",
+  "main": "common-lib.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Bruno Saboia de Albuquerque",
+  "license": "ISC",
+  "dependencies": {
+    "@types/node": "^13.13.5",
+    "md5-file": "^5.0.0",
+    "typescript": "^3.8.3"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^2.31.0",
+    "@typescript-eslint/parser": "^2.31.0",
+    "eslint": "^6.8.0",
+    "eslint-config-google": "^0.14.0"
+  }
+}

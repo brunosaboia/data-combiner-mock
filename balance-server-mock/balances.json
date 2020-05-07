@@ -1,0 +1,22 @@
+[
+    {
+      "account": "DK2750511545499816",
+      "balance": 100.43,
+      "currency": "DKK"
+    },
+    {
+      "account": "DK2750511545499816",
+      "balance": 4000.44,
+      "currency": "DKK"
+    },
+    {
+      "account": "DK0550514428749649",
+      "balance": 100000.00,
+      "currency": "DKK"
+    },
+    {
+      "account": "DK0650515677181341",
+      "balance": 1500000.00,
+      "currency": "DKK"
+    }
+  ]
