@@ -5,6 +5,10 @@ services:
     ports:
       - "8080:8080"
   balance:
-    build: ./balance-server-mock
+    build:
+      context: .
+      dockerfile: ./balance-server-mock/Dockerfile
   customer-details:
-    build: ./customer-details-server-mock
+    build:
+      context: .
+      dockerfile: ./customer-details-server-mock/Dockerfile

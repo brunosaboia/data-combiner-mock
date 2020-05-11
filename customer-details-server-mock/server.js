@@ -1,5 +1,6 @@
 const {ApolloServer, gql} = require('apollo-server');
-const {DataLoader} = require('../common-lib/data-loader');
+const {DataLoader} = require('../common-lib/dist/data-loader');
+const {Sleeper} = require('../common-lib/dist/sleeper');
 
 
 const typeDefs = gql`
@@ -34,7 +35,9 @@ const resolvers = {
     async customersDelay(_, args) {
       await customers.loadMostUpToDateData();
 
-      await sleepWithArgs(args);
+      const {min, max} = args;
+
+      await Sleeper.sleepWithArgs(min, max);
 
       return customers.data;
     },
@@ -50,7 +53,9 @@ const resolvers = {
     async findByNameDelay(_, args) {
       await customers.loadMostUpToDateData();
 
-      await sleepWithArgs(args);
+      const {min, max} = args;
+
+      await Sleeper.sleepWithArgs(min, max);
 
       return customers.data.find((customer) => customer.name === args.name);
     },
@@ -69,6 +74,8 @@ const server = new ApolloServer({
   resolvers,
 });
 
-server.listen(7802).then(({url}) => {
+const port = process.env.CUSTOMER_DETAILS_SERVER_PORT || 7802;
+
+server.listen(port).then(({url}) => {
   console.log(`Customer details server started at URL ${url}`);
 });

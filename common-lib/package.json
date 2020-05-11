@@ -4,7 +4,8 @@
   "description": "Just a library with common methods for Data Combiner mock",
   "main": "common-lib.ts",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "tsc": "npx tsc"
   },
   "author": "Bruno Saboia de Albuquerque",
   "license": "ISC",

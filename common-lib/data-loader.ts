@@ -1,4 +1,5 @@
 /* eslint-disable require-jsdoc */
+
 import md5File from 'md5-file';
 import fs from 'fs';
 /**
@@ -84,23 +85,5 @@ export class DataLoader {
       console.log('Loading most recent data');
       this.data = this.readJsonData();
       console.log(`Loaded ${this.data.length} items in memory`);
-    };
-
-    sleep(milliseconds: number): Promise<any> {
-      return new Promise((resolve) => setTimeout(resolve, milliseconds));
-    };
-
-    generateRandomInteger(min: number, max: number): number {
-      return Math.floor(Math.random() * (max - min) + min);
-    };
-
-    async sleepWithArgs(args: { min: number; max: number; }): Promise<void> {
-      const min = args.min || 3000;
-      const max = args.max || 10000;
-
-      const sleepTime = this.generateRandomInteger(min, max);
-      console.log(`Sleeping for ${sleepTime} before continuing flow`);
-
-      await this.sleep(sleepTime);
     };
 };
