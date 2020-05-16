@@ -2,7 +2,6 @@ const {ApolloServer, gql} = require('apollo-server');
 const {DataLoader} = require('../common-lib/dist/data-loader');
 const {Sleeper} = require('../common-lib/dist/sleeper');
 
-
 const typeDefs = gql`
     type Query {
       customers: [CustomerDetails]
@@ -18,7 +17,6 @@ const typeDefs = gql`
       address: String
     }
 `;
-
 
 const customerDataFilePath = './customers.json';
 const customers = new DataLoader(customerDataFilePath);
@@ -43,10 +41,6 @@ const resolvers = {
     },
     async findByName(_, args) {
       await customers.loadMostUpToDateData();
-
-      const msg = `Sending customer details for name ${args.name}` +
-        'without delay';
-      console.log(msg);
 
       return customers.data.find((customer) => customer.name === args.name);
     },
